@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.graphics.Color;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewOpcjaZaznaczona;
     private CheckBox checkbox;
     private LinearLayout main;
+    private EditText input;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         switcher = findViewById(R.id.switcher);
         main = findViewById(R.id.main_layout);
+        input = findViewById(R.id.input);
         switcher.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 main.setBackgroundColor(Color.BLACK);
@@ -52,12 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 textViewOpcjaZaznaczona.setTextColor(Color.WHITE);
                 checkbox.setTextColor(Color.WHITE);
                 switcher.setTextColor(Color.WHITE);
+                input.setTextColor(Color.WHITE);
             } else {
                 main.setBackgroundColor(Color.WHITE);
                 textViewCount.setTextColor(Color.BLACK);
                 textViewOpcjaZaznaczona.setTextColor(Color.BLACK);
                 checkbox.setTextColor(Color.BLACK);
                 switcher.setTextColor(Color.BLACK);
+                input.setTextColor(Color.BLACK);
             }
         });
 
